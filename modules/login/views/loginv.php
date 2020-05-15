@@ -33,10 +33,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       <!-- <form action="../../index3.html" method="post"> -->
 
-      <?php if ($this->session->flashdata('gagal')) {
-        echo '<p class="warning">'.$this->session->flashdata('gagal').'</p>';
+      <?php if ($this->session->flashdata('message')) {
+        echo '<p class="warning">'.$this->session->flashdata('message').'</p>';
       }?>
-      <?php echo form_open('login');?>
+      <?php echo form_open('auth/login');?>
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="username" placeholder="username" value="<?php echo set_value('username')?>">
           <div class="input-group-append">
