@@ -18,10 +18,12 @@ class M_search extends CI_Model {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-
-	public function findBy($id){
-        $this->db->where('item_id', $id);
-        $result = $this->db->get('items')->row();
+	public function view(){
+		return $this->db->get('items')->result();
+	}
+	public function findBy($key){
+        $this->db->like('item_name', $key);
+        $result = $this->db->get('items')->result();
         return $result;
     }
 }

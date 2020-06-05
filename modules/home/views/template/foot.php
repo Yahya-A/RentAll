@@ -71,57 +71,59 @@
   <script type="text/javascript" src="<?php echo base_url('assets/v.0.1/js/bootstrap.min.js')?>"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="<?php echo base_url('assets/v.0.1/js/mdb.min.js')?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/v.0.1/js/configajax.js')?>"></script>
   <!-- Your custom scripts (optional) -->
   <script type="text/javascript">
-  $(document).ready(function(){
-		$('.add_cart').click(function(){
-			var produk_id    = $(this).data("produkid");
-			var produk_nama  = $(this).data("produknama");
-			var produk_harga = $(this).data("produkharga");
-			var lama_sewa    = $('#' + produk_id).val();
-			var jenis_sewa   = $(this).data("sewa");;
-			$.ajax({
-				url : "<?php echo base_url();?>/cart/add_to_cart",
-				method : "POST",
-				data : {item_id: produk_id, item_name: produk_nama, rent_price: produk_harga, duration_rent: lama_sewa, sewa: jenis_sewa},
-				success: function(data){
-					$('#detail_cart').html(data);
-				}
-			});
-		});
+  var baseurl = "<?= base_url();?>"
+  // $(document).ready(function(){
+	// 	$('.add_cart').click(function(){
+	// 		var produk_id    = $(this).data("produkid");
+	// 		var produk_nama  = $(this).data("produknama");
+	// 		var produk_harga = $(this).data("produkharga");
+	// 		var lama_sewa    = $('#' + produk_id).val();
+	// 		var jenis_sewa   = $(this).data("sewa");;
+	// 		$.ajax({
+	// 			url : "<?php echo base_url();?>/cart/add_to_cart",
+	// 			method : "POST",
+	// 			data : {item_id: produk_id, item_name: produk_nama, rent_price: produk_harga, duration_rent: lama_sewa, sewa: jenis_sewa},
+	// 			success: function(data){
+	// 				$('#detail_cart').html(data);
+	// 			}
+	// 		});
+	// 	});
 
-		// $('.pesan').click(function(){
-		// 	var id_pel    = $(this).data("produkid");
-		// 	var nama_brg  = $(this).data("produknama");
-		// 	var harga = $(this).data("produkharga");
-		// 	var quantity     = $('#' + produk_id).val();
-		// 	$.ajax({
-		// 		url : "<?php echo base_url();?>index.php/cart/order",
-		// 		method : "POST",
-		// 		data : {id_pel: id_pel, nama_brg: nama_brg, harga: harga, quantity: quantity},
-		// 		success: function(data){
-		// 			$('#detail_cart').html(data);
-		// 		}
-		// 	});
-		// });
+	// 	// $('.pesan').click(function(){
+	// 	// 	var id_pel    = $(this).data("produkid");
+	// 	// 	var nama_brg  = $(this).data("produknama");
+	// 	// 	var harga = $(this).data("produkharga");
+	// 	// 	var quantity     = $('#' + produk_id).val();
+	// 	// 	$.ajax({
+	// 	// 		url : "<?php echo base_url();?>index.php/cart/order",
+	// 	// 		method : "POST",
+	// 	// 		data : {id_pel: id_pel, nama_brg: nama_brg, harga: harga, quantity: quantity},
+	// 	// 		success: function(data){
+	// 	// 			$('#detail_cart').html(data);
+	// 	// 		}
+	// 	// 	});
+	// 	// });
 
 
-		// Load shopping cart
-		$('#detail_cart').load("<?php echo base_url();?>index.php/cart/load_cart");
+	// 	// Load shopping cart
+	// 	$('#detail_cart').load("<?php echo base_url();?>index.php/cart/load_cart");
 
-		//Hapus Item Cart
-		$(document).on('click','.hapus_cart',function(){
-			var row_id=$(this).attr("id"); //mengambil row_id dari artibut id
-			$.ajax({
-				url : "<?php echo base_url();?>cart/hapus_cart",
-				method : "POST",
-				data : {row_id : row_id},
-				success :function(data){
-					$('#detail_cart').html(data);
-				}
-			});
-		});
-	});
+	// 	//Hapus Item Cart
+	// 	$(document).on('click','.hapus_cart',function(){
+	// 		var row_id=$(this).attr("id"); //mengambil row_id dari artibut id
+	// 		$.ajax({
+	// 			url : "<?php echo base_url();?>cart/hapus_cart",
+	// 			method : "POST",
+	// 			data : {row_id : row_id},
+	// 			success :function(data){
+	// 				$('#detail_cart').html(data);
+	// 			}
+	// 		});
+	// 	});
+	// });
       new WOW().init();
   </script>
 

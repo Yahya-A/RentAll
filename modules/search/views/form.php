@@ -1,4 +1,13 @@
- <body>
+<html>
+<head>
+<script type="text/javascript" src="<?php echo base_url('assets/v.0.1/js/jquery.min.js')?>"></script>
+ <script type="text/javascript" src="<?php echo base_url('assets/v.0.1/js/config.js')?>"></script>
+ <script type="text/javascript">
+ var baseurl = "<?= base_url();?>"
+ </script>
+</head>
+<body>
+<!--  -->
  <h1>FORM SISWA</h1><hr>
  <form>
  <table>
@@ -34,8 +43,6 @@
  </table>
  </form>
  </body>
- <script type="text/javascript" src="<?php echo base_url('assets/v.0.1/js/jquery.min.js')?>"></script>
- <script type="text/javascript" src="<?php echo base_url('assets/v.0.1/js/config.js')?>"></script>
- <script type="text/javascript">
- var baseurl = "<?= base_url();?>"
- </script>
+ </html>
+ 
+ 

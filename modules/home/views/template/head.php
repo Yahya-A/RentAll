@@ -52,16 +52,22 @@
             <a href="#" class="dropdown-item">Lainnya</a>
           </div>
         </li>
-        <li class="nav-item mr-3">
+        <!-- <li class="nav-item mr-3">
           <a class="nav-link" href="#" target="_blank">Cara Penyewaan</a>
         </li>
         <li class="nav-item mr-3">
           <a class="nav-link" href="#" target="_blank">Hubungi Kami</a>
-        </li>
+        </li> -->
       </ul>
 
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons">
+        <li>
+          <form class="form-inline mr-auto">
+            <input class="form-control" type="text" placeholder="Ketikkan Nama Barang . ." aria-label="Search" id="key">
+            <button class="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2" type="button" id="cari">Search</button>
+          </form>
+        </li>
         <li class="nav-item dropdown cart">
             <a class="nav-link waves-effect" id="navbarDropdowncart" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
               <span class="badge red z-depth-1 mr-1"> 0 </span>
@@ -99,7 +105,7 @@
             </ul>
         </li>
         <li class="nav-item" >
-          <a href="#" class="nav-link">
+          <a href="<?= base_url('login')?>" class="nav-link">
             <p class="h6 pt-1">Sign In</p>
           </a>
         </li>

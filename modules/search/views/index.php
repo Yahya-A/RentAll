@@ -18,10 +18,14 @@
 <section>
 
     <!-- Grid row -->
-    <div class="row" id="content">
+    <div id="hasil">
+    <div class="row">
       <!-- Grid column -->
-        <input type="text" name="name" id="name">
+      <?php $this->load->view('view', array('items'=>$items));?>
+        <!-- <input type="text" name="name" id="name"> -->
     </div>
+    </div>
+    
     <!-- Grid row -->
   
   </section>

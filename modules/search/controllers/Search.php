@@ -18,32 +18,24 @@ class Search extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	function __construct(){
+	public function __construct(){
         parent::__construct();
         $this->load->model('M_search', 'ms');
     }
     
     public function index(){
-        // $this->load->view('home/template/head');
-		// $this->load->view('home/template/slider');
-		$this->load->view('form');
-		// $this->load->view('home/template/foot');
+        $data['items'] = $this->ms->view();
+        $this->load->view('home/template/head');
+		$this->load->view('home/template/slider');
+		$this->load->view('index', $data);
+		$this->load->view('home/template/foot');
     }
 
-    public function search(){
-        $name = $this->input->post('id');
-        $res = $this->ms->findBy($id);
-
-        if (! empty($res)) {
-            $callback = array(
-                'status' => 'success',
-                'item_name' => $res->item_name
-                // 'item_pict' => $res->item_pict,
-                // 'rent_price' => $res->rent_price
-            );
-        } else {
-            $callback = array('status' => 'failed');
-        }
+    public function find(){
+        $key = $this->input->post('key');
+		$items = $this->ms->findBy($key);
+		$view = $this->load->view('view', array('items'=>$items), true);
+        $callback = array('data' => $view);
         echo json_encode($callback);
     }
 }
